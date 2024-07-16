@@ -8,10 +8,16 @@
 import SwiftUI
 
 public struct ButtonViewHelper: View {
-    var name: String
-    var action: (() -> ())?
-    var width: CGFloat
-    var height: CGFloat
+    public var name: String
+    public var action: (() -> ())?
+    public var width: CGFloat
+    public var height: CGFloat
+    public init(name: String, action: (() -> ())? = nil, width: CGFloat, height: CGFloat) {
+        self.name = name
+        self.action = action
+        self.width = width
+        self.height = height
+    }
     public var body: some View {
         Button {
             action?()
